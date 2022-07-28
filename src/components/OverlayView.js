@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import React, {useState, useRef} from 'react';
 
-
 //Icones
 import cadastroIcon from '../assets/user-plus.png';
 import listarIcon from '../assets/users.png';
@@ -32,14 +31,12 @@ export default function OverlayView() {
   //Propiedades da Animação
   const offsetValue = useRef(new Animated.Value(0)).current;
   const scaleValue = useRef(new Animated.Value(1)).current;
+  const opacityValue = useRef(new Animated.Value(1)).current;
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
-
-
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={{justifyContent: 'flex-start', padding: 20}}>
-        
         <View style={styles.tabBar}>
           {
             // tab bar buttons
@@ -107,19 +104,23 @@ export default function OverlayView() {
                 useNativeDriver: true,
               }).start();
 
+              Animated.timing(opacityValue,
+                {
+                  toValue: showMenu ? 1 : 0,
+                  duration: 100,
+                  useNativeDriver: true
+                }
+                ).start();
+
               setShowMenu(!showMenu);
             }}>
-              
             <Image
               source={showMenu ? fecharIcon : menuIcon}
               style={styles.menu}
             />
+          <Text style={styles.title}>{currentTab}</Text> 
           </TouchableOpacity>
-          <Text
-            style={styles.title}>
-            {currentTab}
-          </Text>
-          <View>{currentPage}</View>
+          <Animated.View style={[styles.pageView, {opacity: opacityValue}]}>{currentPage}</Animated.View>
         </Animated.View>
       </Animated.View>
     </SafeAreaView>
@@ -144,20 +145,28 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 20,
   },
-  title:{
-      fontSize: 30,
-      fontWeight: 'bold',
-      color: '#000',
-      paddingTop: 20
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#000',
+    paddingTop: 20,
   },
-  menu:{
+  menu: {
     width: 25,
     height: 25,
     tintColor: '#000',
     marginTop: 40,
   },
-  tabBar:{
+  tabBar: {
     flexGrow: 1,
-    marginTop: 50
+    marginTop: 50,
+  },
+  pageView: {
+    width: '100%',
+    height: '80%',
+    backgroundColor: 'transparent',
+    borderRadius: 5,
+
+
   },
 });

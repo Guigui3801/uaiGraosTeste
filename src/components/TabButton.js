@@ -21,6 +21,10 @@ const TabButton = (currentTab, setCurrentTab, title, image, currentPage, setCurr
             backgroundColor: currentTab == title ? '#FFF' : 'transparent',
             borderRadius: 6,
             marginTop: 15,
+                top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
           }}>
           <Image
             source={image}
