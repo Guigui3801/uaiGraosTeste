@@ -114,11 +114,14 @@ export default function OverlayView() {
 
               setShowMenu(!showMenu);
             }}>
+              <View style={{flexDirection: 'row'}}> 
+
             <Image
               source={showMenu ? fecharIcon : menuIcon}
               style={styles.menu}
             />
           <Text style={styles.title}>{currentTab}</Text> 
+              </View>
           </TouchableOpacity>
           <Animated.View style={[styles.pageView, {opacity: opacityValue}]}>{currentPage}</Animated.View>
         </Animated.View>
@@ -149,7 +152,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: '#000',
-    paddingTop: 20,
+    paddingTop: 30,
+    paddingLeft: 10
   },
   menu: {
     width: 25,
@@ -163,7 +167,7 @@ const styles = StyleSheet.create({
   },
   pageView: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     backgroundColor: 'transparent',
     borderRadius: 5,
 
