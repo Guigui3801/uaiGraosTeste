@@ -14,15 +14,17 @@ import cadastroIcon from '../assets/user-plus.png';
 import listarIcon from '../assets/users.png';
 import menuIcon from '../assets/menu.png';
 import fecharIcon from '../assets/close.png';
+import profile from '../assets/profile.jpg'
 
 //component
 import TabButton from './TabButton';
 import Cadastro from '../pages/Cadastro';
 import About from '../pages/About';
 
+
 export default function OverlayView() {
   //Pegar as Paginas
-  const [currentTab, setCurrentTab] = useState('Cadastro');
+  const [currentTab, setCurrentTab] = useState('Cadastrar');
   const [currentPage, setCurrentPage] = useState(<Cadastro />);
 
   //Pegar o status do menu
@@ -36,7 +38,28 @@ export default function OverlayView() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{justifyContent: 'flex-start', padding: 20}}>
+       <View style={{ justifyContent: "flex-start", padding: 20 }}>
+        <Image
+          source={profile}
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 10,
+            marginTop: 8,
+          }}
+        />
+
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+            color: "#FFF",
+            marginTop: 20,
+          }}
+        >
+          Administrador
+        </Text>
+
         <View style={styles.tabBar}>
           {
             // tab bar buttons
@@ -44,7 +67,7 @@ export default function OverlayView() {
           {TabButton(
             currentTab,
             setCurrentTab,
-            'Cadastro',
+            'Cadastrar',
             cadastroIcon,
             <Cadastro />,
             setCurrentPage,
@@ -133,7 +156,7 @@ export default function OverlayView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5359D1',
+    backgroundColor: '#CC8A56',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },

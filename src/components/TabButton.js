@@ -31,14 +31,14 @@ const TabButton = (currentTab, setCurrentTab, title, image, currentPage, setCurr
             style={{
               width: 25,
               height: 25,
-              tintColor: currentTab == title ? '#5359D1' : '#fff',
+              tintColor: currentTab == title ? '#CC8A56' : '#fff',
             }}/>
           <Text
             style={{
               fontSize: 15,
               fontWeight: 'bold',
               paddingLeft: 15,
-              color: currentTab == title ? '#5359D1' : '#fff',
+              color: currentTab == title ? '#CC8A56' : '#fff',
             }}>
             {title}
           </Text>
