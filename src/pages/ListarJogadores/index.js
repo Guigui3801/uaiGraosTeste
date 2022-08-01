@@ -1,11 +1,12 @@
-import {SafeAreaView, Text, FlatList} from 'react-native';
+import {SafeAreaView, Text, FlatList, ActivityIndicator} from 'react-native';
 import React, {useEffect, useState} from 'react';
 
 import firebase from '../../services/firebaseConnection';
-import Listagem from '../../components/Listagem';
+import JogadoresSelecionados from '../../components/JogadoresSelecionados';
 
 export default function ListarJogadores() {
   const [jogadores, setJogadores] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function dados() {
@@ -33,19 +34,30 @@ export default function ListarJogadores() {
             };
             setJogadores(oldArray => [...oldArray, data]);
           });
+
+          setLoading(false);
         });
+
     }
     dados();
   }, []);
 
   return (
-    <SafeAreaView>
-      <Text style={{color: '#000'}}>Selecione o jogador:</Text>
+    <SafeAreaView >
+      <Text style={{color: '#000', paddingTop: 10}}>Selecione o jogador:</Text>
+      {loading ?
+    (
+
+      <ActivityIndicator color='#909284' size={45} />
+    ):
+    (
       <FlatList
         keyExtractor={item => item.key}
         data={jogadores}
-        renderItem={({item}) => <Listagem data={item} />}
+        renderItem={({item}) => <JogadoresSelecionados data={item} />}
       />
+    )
+    }
     </SafeAreaView>
   );
 }

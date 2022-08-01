@@ -36,7 +36,7 @@ const TabButton = (
           style={{
             width: 25,
             height: 25,
-            tintColor: currentTab == title ? '#CC8A56' : '#fff',
+            tintColor: currentTab == title ? '#909284' : '#fff',
           }}
         />
         <Text
@@ -44,7 +44,7 @@ const TabButton = (
             fontSize: 15,
             fontWeight: 'bold',
             paddingLeft: 15,
-            color: currentTab == title ? '#CC8A56' : '#fff',
+            color: currentTab == title ? '#909284' : '#fff',
           }}>
           {title}
         </Text>

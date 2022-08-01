@@ -57,7 +57,7 @@ export default function OverlayView() {
             marginTop: 20,
           }}
         >
-          Administrador
+          Teste UAI Grãos
         </Text>
 
         <View style={styles.tabBar}>
@@ -156,7 +156,7 @@ export default function OverlayView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#CC8A56',
+    backgroundColor: '#909284',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
