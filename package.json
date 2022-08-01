@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.5.12",
+    "@rneui/base": "github:react-native-elements/react-native-elements#base",
+    "@rneui/themed": "github:react-native-elements/react-native-elements#themed",
     "axios": "^0.27.2",
     "firebase": "^8.8.1",
     "react": "18.0.0",

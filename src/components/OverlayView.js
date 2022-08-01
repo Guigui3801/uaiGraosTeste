@@ -19,7 +19,7 @@ import profile from '../assets/profile.jpg'
 //component
 import TabButton from './TabButton';
 import Cadastro from '../pages/Cadastro';
-import About from '../pages/About';
+import ListarJogadores from '../pages/ListarJogadores';
 
 
 export default function OverlayView() {
@@ -75,9 +75,9 @@ export default function OverlayView() {
           {TabButton(
             currentTab,
             setCurrentTab,
-            'About',
+            'Selecionar',
             listarIcon,
-            <About />,
+            <ListarJogadores/>,
             setCurrentPage,
           )}
         </View>
