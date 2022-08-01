@@ -178,14 +178,14 @@ export default function FormularioCadastro(){
                     editable={false}
                     placeholder="Bairro:"
                     placeholderTextColor="#808080"
-                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 155}]}
+                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 170}]}
                     value={cepUser && cepUser.bairro}
                   />
                   <TextInput
                     editable={false}
                     placeholder="Cidade:"
                     placeholderTextColor="#808080"
-                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 155, marginRight: 30}]}
+                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 170}]}
                     value={cepUser && cepUser.localidade}
                   />
                 </View>
@@ -200,14 +200,13 @@ export default function FormularioCadastro(){
                     editable={false}
                     placeholder="UF: (Ex.: MG)"
                     placeholderTextColor="#808080"
-                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 155}]}
+                    style={[styles.input, {backgroundColor: '#c0c0c0', width: 170}]}
                     value={cepUser && cepUser.uf}
                   />
                   <TextInput
-                    keyboardType='number-pad'
                     placeholder="Número: "
                     placeholderTextColor="#808080"
-                    style={[styles.input, {width: 155, marginRight: 30}]}
+                    style={[styles.input, {width: 170}]}
                     value={numeroCasa}
                     onChangeText={text => setNumeroCasa(text)}
                   />
@@ -239,7 +238,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'center',
+      //justifyContent: 'center',
       paddingTop: 10,
       backgroundColor: '#fff',
     },
@@ -249,7 +248,7 @@ const styles = StyleSheet.create({
       paddingLeft: 5,
     },
     input: {
-      width: 320,
+      width: 350,
       height: 40,
       backgroundColor: '#ddd',
       borderRadius: 5,
@@ -284,7 +283,7 @@ const styles = StyleSheet.create({
       fontSize: 22,
     },
     inputCep: {
-      width: 250,
+      width: 290,
       height: 40,
       backgroundColor: '#ddd',
       borderRadius: 5,
@@ -295,8 +294,9 @@ const styles = StyleSheet.create({
       color: '#000',
     },
     botaoCep: {
-      width: 60,
-      marginRight: 30,
+      width: 50,
+      padding: 5,
+      marginLeft: 5,
       marginTop: 5,
       marginBottom: 3,
       height: 40,

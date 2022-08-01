@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   tabBar: {
+    flex: 1,
     flexGrow: 1,
     marginTop: 50,
   },
