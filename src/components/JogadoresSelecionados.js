@@ -30,8 +30,10 @@ export default function JogadoresSelecionados({data}) {
   }
 
   return (
-    <View
-      View
+ <View>
+
+{data.key !== 'String' && (
+  <View
       style={[
         styles.container,
         {backgroundColor: data.selecionado == true ? '#dbead5' : '#d0d0d0'},
@@ -69,6 +71,11 @@ export default function JogadoresSelecionados({data}) {
         )}
       </View>
     </View>
+)}
+  
+    </View>
+  
+    
   );
 }
 
