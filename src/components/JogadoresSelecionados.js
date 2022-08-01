@@ -13,7 +13,7 @@ export default function JogadoresSelecionados({data}) {
     var dia = String(date.getDate()).padStart(2, '0');
     var mes = String(date.getMonth() + 1).padStart(2, '0');
     var ano = date.getFullYear();
-    var hora = String(date.getHours() - 3).padStart(2, '0');
+    var hora = String(date.getHours()).padStart(2, '0');
     var minutos = String(date.getMinutes()).padStart(2, '0');
     var dataAtual = dia + `/` + mes + `/` + ano + ` - ` + hora + `:` + minutos;
 
